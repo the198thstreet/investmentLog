@@ -5,6 +5,7 @@
   var updatedAtChip = document.getElementById("updated-at-chip");
   var heroTitle = document.getElementById("hero-title");
   var heroSummary = document.getElementById("hero-summary");
+  var heroEyebrow = document.getElementById("hero-eyebrow");
   var buyCount = document.getElementById("buy-count");
   var holdCount = document.getElementById("hold-count");
   var sellCount = document.getElementById("sell-count");
@@ -17,6 +18,7 @@
   var prevButton = document.getElementById("prev-date");
   var nextButton = document.getElementById("next-date");
   var tableBody = document.getElementById("ticker-table-body");
+  var mobileCardList = document.getElementById("mobile-card-list");
 
   var state = {
     dates: [],
@@ -58,10 +60,12 @@
 
   function setLoading(message) {
     tableBody.innerHTML = '<tr><td colspan="8" class="empty-row">' + message + "</td></tr>";
+    mobileCardList.innerHTML = '<div class="mobile-empty">' + message + "</div>";
   }
 
   function setEmpty(message) {
     tableBody.innerHTML = '<tr><td colspan="8" class="empty-row">' + message + "</td></tr>";
+    mobileCardList.innerHTML = '<div class="mobile-empty">' + message + "</div>";
   }
 
   function formatUpdatedAt(value) {
@@ -111,11 +115,44 @@
         "</tr>"
       ].join("");
     }).join("");
+
+    mobileCardList.innerHTML = items.map(function (item) {
+      var entryLabel = item.signal === "매도" ? "정리 기준" : "진입 구간";
+      var bullets = (item.reasonBullets || []).slice(0, 4).map(function (bullet) {
+        return '<li>' + bullet + "</li>";
+      }).join("");
+      var cardTone = item.signal === "매수" ? "mobile-stock-card positive-card" : (item.signal === "매도" ? "mobile-stock-card negative-card" : "mobile-stock-card neutral-card");
+
+      return [
+        '<article class="' + cardTone + '">',
+        '  <div class="mobile-stock-head">',
+        '    <div class="ticker-cell">',
+        '      <strong class="ticker-name">' + item.name + "</strong>",
+        '      <span class="ticker-code">' + item.symbol + "</span>",
+        "    </div>",
+        '    <span class="signal-badge ' + signalClass(item.signal) + '">' + item.signal + "</span>",
+        "  </div>",
+        '  <div class="mobile-stock-grid">',
+        '    <div class="mobile-metric"><span>신뢰도</span><strong>' + percentText(item.confidencePct) + "</strong></div>",
+        '    <div class="mobile-metric"><span>현재가</span><strong>' + numberText(item.currentPrice) + "</strong></div>",
+        '    <div class="mobile-metric"><span>' + entryLabel + '</span><strong>' + numberText(item.buyLow) + " ~ " + numberText(item.buyHigh) + "</strong></div>",
+        '    <div class="mobile-metric"><span>목표가</span><strong>' + numberText(item.targetPrice1) + "</strong><em>" + numberText(item.targetPrice2) + "</em></div>",
+        '    <div class="mobile-metric"><span>손절가</span><strong>' + numberText(item.stopLossPrice) + "</strong></div>",
+        '    <div class="mobile-metric"><span>예상 수익률</span><strong>' + percentText(item.expectedReturnPct) + "</strong></div>",
+        "  </div>",
+        '  <div class="mobile-reason">',
+        '    <strong>' + item.reasonSummary + "</strong>",
+        bullets ? ('    <details class="mobile-reason-details"><summary>판단 근거 더보기</summary><ul class="mobile-reason-list">' + bullets + "</ul></details>") : "",
+        "  </div>",
+        "</article>"
+      ].join("");
+    }).join("");
   }
 
   function updateSummary(report) {
     var summary = report.summary || {};
-    heroTitle.textContent = report.date + " 기준 상위 종목 제안";
+    heroEyebrow.textContent = "상위 " + numberText(summary.totalCount) + "종목";
+    heroTitle.textContent = report.date + " 기준 상위 " + numberText(summary.totalCount) + "종목 제안";
     heroSummary.textContent = summary.headline || "선택한 날짜의 투자 로그입니다.";
     buyCount.textContent = numberText(summary.buyCount);
     holdCount.textContent = numberText(summary.holdCount);
@@ -130,8 +167,8 @@
   function updateDateControls() {
     datePicker.value = state.currentDate || "";
     var index = state.dates.indexOf(state.currentDate);
-    prevButton.disabled = index <= 0;
-    nextButton.disabled = index < 0 || index >= state.dates.length - 1;
+    prevButton.disabled = index < 0 || index >= state.dates.length - 1;
+    nextButton.disabled = index <= 0;
   }
 
   function renderReport(report) {
@@ -164,11 +201,11 @@
   }
 
   prevButton.addEventListener("click", function () {
-    moveDate(-1);
+    moveDate(1);
   });
 
   nextButton.addEventListener("click", function () {
-    moveDate(1);
+    moveDate(-1);
   });
 
   datePicker.addEventListener("change", function () {

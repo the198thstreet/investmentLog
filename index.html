@@ -28,39 +28,27 @@
 
     <main id="main-content" class="site-main">
       <section class="hero-section">
-        <div class="container hero-layout">
-          <section class="hero-copy panel reveal">
-            <p class="eyebrow">상위 60종목</p>
-            <h1 id="hero-title">날짜별 투자 로그를 불러오는 중입니다.</h1>
-            <p class="section-copy" id="hero-summary">최근 거래일 데이터와 상위 종목 요약을 준비하고 있습니다.</p>
-            <div class="hero-pills" id="hero-pills">
-              <span class="hero-pill">JSON 기반</span>
-              <span class="hero-pill">날짜 탐색</span>
-              <span class="hero-pill">정적 배포</span>
+        <div class="container">
+          <section class="hero-bar panel reveal">
+            <div class="hero-bar-copy">
+              <p class="eyebrow" id="hero-eyebrow">상위 종목</p>
+              <h1 id="hero-title">날짜별 투자 로그를 불러오는 중입니다.</h1>
+              <p class="section-copy" id="hero-summary">최근 거래일 데이터와 상위 종목 요약을 준비하고 있습니다.</p>
             </div>
-          </section>
-
-          <section class="hero-metrics panel reveal">
-            <div class="section-heading slim">
-              <div>
-                <p class="eyebrow">오늘 요약</p>
-                <h2>시그널 분포</h2>
-              </div>
-            </div>
-            <div class="metric-grid">
-              <article class="metric-card">
+            <div class="hero-mini-grid">
+              <article class="hero-mini-card">
                 <span class="metric-label">매수</span>
                 <strong class="metric-value" id="buy-count">-</strong>
               </article>
-              <article class="metric-card">
+              <article class="hero-mini-card">
                 <span class="metric-label">보유</span>
                 <strong class="metric-value" id="hold-count">-</strong>
               </article>
-              <article class="metric-card">
+              <article class="hero-mini-card">
                 <span class="metric-label">매도</span>
                 <strong class="metric-value" id="sell-count">-</strong>
               </article>
-              <article class="metric-card">
+              <article class="hero-mini-card">
                 <span class="metric-label">표 표시 수</span>
                 <strong class="metric-value" id="total-count">-</strong>
               </article>
@@ -74,8 +62,8 @@
           <section class="panel table-panel reveal">
             <div class="section-heading section-heading-spread">
               <div>
-                <p class="eyebrow" id="table-eyebrow">상위 60종목</p>
-                <h2 id="table-title">상위 60종목 요약 표</h2>
+                <p class="eyebrow" id="table-eyebrow">상위 종목</p>
+                <h2 id="table-title">상위 종목 요약 표</h2>
               </div>
               <div class="date-toolbar">
                 <button class="nav-arrow" type="button" id="prev-date" aria-label="이전 날짜">
@@ -118,6 +106,7 @@
                 </tbody>
               </table>
             </div>
+            <div class="mobile-card-list" id="mobile-card-list"></div>
           </section>
         </div>
       </section>
