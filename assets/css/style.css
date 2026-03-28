@@ -463,6 +463,12 @@ input {
   gap: 4px;
 }
 
+.reason-comment {
+  color: var(--brand);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
 .price-main {
   font-weight: 700;
 }
@@ -671,6 +677,10 @@ input {
   .mobile-reason {
     display: grid;
     gap: 8px;
+  }
+
+  .mobile-reason .reason-comment {
+    font-size: 0.9rem;
   }
 
   .mobile-reason strong {
