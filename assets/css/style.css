@@ -34,6 +34,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: #eef3f8;
 }
 
 body {
@@ -41,13 +42,41 @@ body {
   min-width: 320px;
   font-family: var(--font-family);
   color: var(--text);
-  background: var(--bg-accent), linear-gradient(180deg, rgba(255, 255, 255, 0.6), transparent 260px), var(--bg);
-  line-height: 1.65;
+  background: linear-gradient(180deg, #f3f6fa 0%, #eef3f8 220px, #eef3f8 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 18px;
+  z-index: 40;
+  background: #f3f6fa;
+  pointer-events: none;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+p,
+li,
+td,
+th,
+label,
+input,
+button,
+.section-copy,
+.price-sub,
+.reason-bullet,
+.mobile-reason-list,
+.surface-banner,
+.ticker-code,
+.metric-label {
+  line-height: 1.65;
 }
 
 button,
@@ -95,9 +124,9 @@ input {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(18px);
-  background: rgba(238, 243, 248, 0.8);
-  border-bottom: 1px solid rgba(191, 204, 220, 0.8);
+  backdrop-filter: blur(10px);
+  background: rgba(243, 246, 250, 0.96);
+  border-bottom: 1px solid rgba(191, 204, 220, 0.9);
 }
 
 .header-inner {
@@ -268,6 +297,7 @@ input {
   border-radius: 16px;
   border: 1px solid var(--line);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(245, 248, 252, 0.92));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
 .hero-mini-card .metric-label {
@@ -277,6 +307,26 @@ input {
 
 .hero-mini-card .metric-value {
   font-size: 0.95rem;
+}
+
+.hero-mini-buy {
+  background: linear-gradient(180deg, rgba(230, 247, 239, 0.95), rgba(255, 255, 255, 0.92));
+  border-color: rgba(15, 138, 95, 0.18);
+}
+
+.hero-mini-hold {
+  background: linear-gradient(180deg, rgba(239, 243, 248, 0.96), rgba(255, 255, 255, 0.92));
+  border-color: rgba(109, 124, 144, 0.18);
+}
+
+.hero-mini-sell {
+  background: linear-gradient(180deg, rgba(253, 236, 239, 0.95), rgba(255, 255, 255, 0.92));
+  border-color: rgba(203, 71, 92, 0.18);
+}
+
+.hero-mini-total {
+  background: linear-gradient(180deg, rgba(231, 240, 251, 0.95), rgba(255, 255, 255, 0.92));
+  border-color: rgba(21, 60, 104, 0.18);
 }
 
 .date-toolbar {
