@@ -151,14 +151,14 @@
 
   function updateSummary(report) {
     var summary = report.summary || {};
-    heroEyebrow.textContent = "선택 종목 " + numberText(summary.totalCount) + "개";
+    heroEyebrow.textContent = "종목 " + numberText(summary.totalCount) + "개";
     heroTitle.textContent = report.date + " 기준 종목 " + numberText(summary.totalCount) + "개 제안";
     heroSummary.textContent = summary.headline || "선택한 날짜의 투자 로그입니다.";
     buyCount.textContent = numberText(summary.buyCount);
     holdCount.textContent = numberText(summary.holdCount);
     sellCount.textContent = numberText(summary.sellCount);
     totalCount.textContent = numberText(summary.totalCount);
-    tableEyebrow.textContent = "선택 종목 " + numberText(summary.totalCount) + "개";
+    tableEyebrow.textContent = "종목 " + numberText(summary.totalCount) + "개";
     tableTitle.textContent = "종목 " + numberText(summary.totalCount) + "개 요약 표";
     selectedDateLabel.textContent = report.date;
     selectedDateSummary.textContent = summary.headline || "선택한 날짜의 핵심 시그널 요약입니다.";
