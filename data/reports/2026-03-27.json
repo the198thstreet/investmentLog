@@ -1,12 +1,12 @@
 {
   "date": "2026-03-27",
-  "updatedAt": "2026-03-29T00:12:28.5453132+09:00",
+  "updatedAt": "2026-03-29T01:31:49.4796292+09:00",
   "summary": {
-    "headline": "분석 대상 10종목, 매수 6건, 보유 2건, 매도 2건",
-    "totalCount": 10,
-    "buyCount": 6,
+    "headline": "분석 대상 12종목, 매수 7건, 보유 2건, 매도 3건",
+    "totalCount": 12,
+    "buyCount": 7,
     "holdCount": 2,
-    "sellCount": 2
+    "sellCount": 3
   },
   "items": [
     {
@@ -154,6 +154,30 @@
       "testMacroF1Pct": 22.48
     },
     {
+      "symbol": "100790",
+      "name": "미래에셋벤처투자",
+      "signal": "매수",
+      "confidencePct": 55.12,
+      "currentPrice": 32550,
+      "buyLow": 32452.35,
+      "buyHigh": 33526.5,
+      "targetPrice1": 33526.5,
+      "targetPrice2": 34112.4,
+      "stopLossPrice": 31248,
+      "comment": "목표가 기대값 반영, 매수 관점",
+      "reasonSummary": "확률 분포: 매수 55.12%, 보유 3.78%, 매도 41.10%",
+      "reasonBullets": ["확률 분포: 매수 55.12%, 보유 3.78%, 매도 41.10%", "예상 수익률: 0.42%", "검증 정확도: 43.83%", "검증 Macro F1: 20.66%", "테스트 정확도: 57.15%", "테스트 Macro F1: 27.82%", "핵심 근거: 모델 구성: LSTM과 CNN 앙상블로 확률을 합산했습니다.", "핵심 근거: 입력 데이터: 최근 40거래일, 12개 가격/거래량 파생 피처를 사용했습니다.", "핵심 근거: 확률 판단: 매수 55.12%, 관망 3.78%, 매도 41.10%입니다.", "핵심 근거: 검증 성능: 검증 정확도 43.83%, 검증 Macro F1 20.66%입니다.", "핵심 근거: 최종 점검: 테스트 정확도 57.15%, 테스트 Macro F1 27.82%입니다.", "핵심 근거: 기준 종가: 32550, 기준일: 2026-03-27입니다.", "리스크: 검증 Macro F1이 낮아서 클래스 구분력이 아직 약합니다.", "리스크: 테스트 구간 일반화 성능이 약해 최근 장세 적응력이 부족할 수 있습니다."],
+      "actionProbabilityPct": 55.12,
+      "buyProbabilityPct": 55.12,
+      "holdProbabilityPct": 3.78,
+      "sellProbabilityPct": 41.1,
+      "expectedReturnPct": 0.42,
+      "validationAccuracyPct": 43.83,
+      "validationMacroF1Pct": 20.66,
+      "testAccuracyPct": 57.15,
+      "testMacroF1Pct": 27.82
+    },
+    {
       "symbol": "290520",
       "name": "신도기연",
       "signal": "매도",
@@ -176,6 +200,30 @@
       "validationMacroF1Pct": 36.14,
       "testAccuracyPct": 49.49,
       "testMacroF1Pct": 31.16
+    },
+    {
+      "symbol": "047040",
+      "name": "대우건설",
+      "signal": "매도",
+      "confidencePct": 53.22,
+      "currentPrice": 17260,
+      "buyLow": 17260,
+      "buyHigh": 17260,
+      "targetPrice1": 16914.8,
+      "targetPrice2": 16569.6,
+      "stopLossPrice": 17605.2,
+      "comment": "방어 대응 우선, 매도 관점",
+      "reasonSummary": "확률 분포: 매수 44.46%, 보유 2.32%, 매도 53.22%",
+      "reasonBullets": ["확률 분포: 매수 44.46%, 보유 2.32%, 매도 53.22%", "예상 수익률: -0.26%", "검증 정확도: 43.36%", "검증 Macro F1: 23.38%", "테스트 정확도: 43.75%", "테스트 Macro F1: 25.08%", "핵심 근거: 모델 구성: LSTM과 CNN 앙상블로 확률을 합산했습니다.", "핵심 근거: 입력 데이터: 최근 40거래일, 12개 가격/거래량 파생 피처를 사용했습니다.", "핵심 근거: 확률 판단: 매수 44.46%, 관망 2.32%, 매도 53.22%입니다.", "핵심 근거: 검증 성능: 검증 정확도 43.36%, 검증 Macro F1 23.38%입니다.", "핵심 근거: 최종 점검: 테스트 정확도 43.75%, 테스트 Macro F1 25.08%입니다.", "핵심 근거: 기준 종가: 17260, 기준일: 2026-03-27입니다.", "리스크: 검증 Macro F1이 낮아서 클래스 구분력이 아직 약합니다.", "리스크: 테스트 구간 일반화 성능이 약해 최근 장세 적응력이 부족할 수 있습니다.", "리스크: SELL은 신규 공매도 의미가 아니라 보유 비중 축소 또는 정리 신호로 해석해야 합니다."],
+      "actionProbabilityPct": 53.22,
+      "buyProbabilityPct": 44.46,
+      "holdProbabilityPct": 2.32,
+      "sellProbabilityPct": 53.22,
+      "expectedReturnPct": -0.26,
+      "validationAccuracyPct": 43.36,
+      "validationMacroF1Pct": 23.38,
+      "testAccuracyPct": 43.75,
+      "testMacroF1Pct": 25.08
     },
     {
       "symbol": "032820",
