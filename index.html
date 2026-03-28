@@ -129,6 +129,14 @@
     </main>
   </div>
 
+  <script>
+    (function () {
+      if (window.location.pathname.endsWith("/index.html")) {
+        var cleanPath = window.location.pathname.slice(0, -"index.html".length);
+        window.history.replaceState(null, "", cleanPath + window.location.search + window.location.hash);
+      }
+    }());
+  </script>
   <script src="./assets/js/main.js"></script>
 </body>
 </html>
