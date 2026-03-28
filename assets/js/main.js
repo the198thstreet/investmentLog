@@ -17,6 +17,8 @@
   var datePicker = document.getElementById("report-date-picker");
   var prevButton = document.getElementById("prev-date");
   var nextButton = document.getElementById("next-date");
+  var dateToolbarWrap = document.getElementById("date-toolbar-wrap");
+  var dateToolbar = dateToolbarWrap ? dateToolbarWrap.querySelector(".date-toolbar") : null;
   var tableBody = document.getElementById("ticker-table-body");
   var mobileCardList = document.getElementById("mobile-card-list");
 
@@ -231,6 +233,42 @@
     }
   });
 
+  function syncMobileDateToolbar() {
+    if (!dateToolbarWrap || !dateToolbar) {
+      return;
+    }
+
+    if (window.innerWidth > 720) {
+      dateToolbar.classList.remove("is-fixed");
+      dateToolbar.style.left = "";
+      dateToolbar.style.width = "";
+      dateToolbarWrap.style.height = "";
+      return;
+    }
+
+    var wrapRect = dateToolbarWrap.getBoundingClientRect();
+    var shouldFix = wrapRect.top <= 8;
+
+    if (!shouldFix) {
+      dateToolbar.classList.remove("is-fixed");
+      dateToolbar.style.left = "";
+      dateToolbar.style.width = "";
+      dateToolbarWrap.style.height = "";
+      dateToolbarWrap.style.marginTop = "";
+      return;
+    }
+
+    dateToolbarWrap.style.height = dateToolbar.offsetHeight + "px";
+    dateToolbarWrap.style.marginTop = "8px";
+    dateToolbar.classList.add("is-fixed");
+    dateToolbar.style.left = wrapRect.left + "px";
+    dateToolbar.style.width = wrapRect.width + "px";
+  }
+
+  window.addEventListener("scroll", syncMobileDateToolbar, { passive: true });
+  window.addEventListener("resize", syncMobileDateToolbar);
+  window.addEventListener("load", syncMobileDateToolbar);
+
   loadJson(indexUrl)
     .then(function (indexData) {
       state.dates = indexData.availableDates || [];
@@ -246,11 +284,13 @@
       }
 
       showDate(indexData.latestDate || state.dates[0]);
+      syncMobileDateToolbar();
     })
     .catch(function () {
       updatedAtChip.textContent = "데이터 로드 실패";
       heroTitle.textContent = "JSON 데이터를 불러오지 못했습니다.";
       heroSummary.textContent = "data/report-index.json 생성 상태를 확인해 주세요.";
       setMessage("보고서 인덱스를 불러올 수 없습니다.");
+      syncMobileDateToolbar();
     });
 }());
