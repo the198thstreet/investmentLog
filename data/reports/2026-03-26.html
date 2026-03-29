@@ -1,0 +1,1309 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>주식 종목 분석 (2026-03-26) 분석 대상 8종목, 매수 3건, 보유 2건, 매도 3건</title>
+  <meta name="description" content="분석 대상 8종목, 매수 3건, 보유 2건, 매도 3건">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Investment Log">
+  <meta property="og:title" content="주식 종목 분석 (2026-03-26) 분석 대상 8종목, 매수 3건, 보유 2건, 매도 3건">
+  <meta property="og:description" content="분석 대상 8종목, 매수 3건, 보유 2건, 매도 3건">
+  <meta property="og:image" content="../../assets/img/investment-log-mark.svg">
+  <meta name="theme-color" content="#153c68">
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+  <style>
+    :root {
+  --bg: #eef3f8;
+  --bg-accent: radial-gradient(circle at top left, rgba(14, 78, 146, 0.12), transparent 38%);
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-strong: #ffffff;
+  --surface-soft: #f5f8fc;
+  --line: #d7e0ec;
+  --line-strong: #bfccdc;
+  --text: #182433;
+  --text-muted: #5f6f83;
+  --brand: #153c68;
+  --brand-strong: #0e2a4a;
+  --brand-soft: #e7f0fb;
+  --positive: #0f8a5f;
+  --positive-soft: #e6f7ef;
+  --negative: #cb475c;
+  --negative-soft: #fdecef;
+  --neutral: #6d7c90;
+  --neutral-soft: #eff3f8;
+  --shadow: 0 18px 48px rgba(20, 42, 73, 0.10);
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --max-width: 1240px;
+  --header-height: 78px;
+  --font-family: "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #eef3f8;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-family);
+  color: var(--text);
+  background: linear-gradient(180deg, #f3f6fa 0%, #eef3f8 220px, #eef3f8 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 18px;
+  z-index: 40;
+  background: #f3f6fa;
+  pointer-events: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p,
+li,
+td,
+th,
+label,
+input,
+button,
+.section-copy,
+.price-sub,
+.reason-bullet,
+.mobile-reason-list,
+.surface-banner,
+.ticker-code,
+.metric-label {
+  line-height: 1.65;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -44px;
+  left: 20px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+.skip-link:focus {
+  top: 14px;
+}
+
+.site-shell {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(calc(100% - 32px), var(--max-width));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  background: rgba(243, 246, 250, 0.96);
+  border-bottom: 1px solid rgba(191, 204, 220, 0.9);
+}
+
+.header-inner {
+  min-height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: url("../../assets/img/investment-log-mark.svg") center / cover no-repeat;
+  color: transparent;
+  font-size: 0;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brand small {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.header-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-chip,
+.hero-pill,
+.signal-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.status-chip,
+.hero-pill {
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+}
+
+.site-main {
+  padding-bottom: 72px;
+}
+
+.hero-section {
+  padding: 14px 0 8px;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid rgba(215, 224, 236, 0.9);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.hero-bar,
+.table-panel {
+  padding: 20px;
+}
+
+.hero-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(420px, 0.85fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--brand);
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-bar h1,
+.section-heading h2 {
+  margin: 0;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+}
+
+.hero-bar h1 {
+  max-width: none;
+  font-size: clamp(1.05rem, 1.45vw, 1.42rem);
+  white-space: nowrap;
+}
+
+.section-copy {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+  max-width: 60ch;
+}
+
+.hero-bar-copy {
+  min-width: 0;
+}
+
+.section {
+  padding-top: 14px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.table-heading-bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 14px;
+}
+
+.table-heading-bar .section-heading {
+  margin-bottom: 0;
+  flex: 1 1 auto;
+}
+
+.section-heading-spread {
+  align-items: center;
+}
+
+.slim h2 {
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+}
+
+.metric-label {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  margin-bottom: 8px;
+}
+
+.metric-value {
+  display: block;
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  letter-spacing: -0.03em;
+}
+
+.hero-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.hero-mini-card {
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(245, 248, 252, 0.92));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.hero-mini-card .metric-label {
+  margin-bottom: 4px;
+  font-size: 0.76rem;
+}
+
+.hero-mini-card .metric-value {
+  font-size: 0.95rem;
+}
+
+.hero-mini-buy {
+  background: linear-gradient(180deg, rgba(230, 247, 239, 0.95), rgba(255, 255, 255, 0.92));
+  border-color: rgba(15, 138, 95, 0.18);
+}
+
+.hero-mini-hold {
+  background: linear-gradient(180deg, rgba(239, 243, 248, 0.96), rgba(255, 255, 255, 0.92));
+  border-color: rgba(109, 124, 144, 0.18);
+}
+
+.hero-mini-sell {
+  background: linear-gradient(180deg, rgba(253, 236, 239, 0.95), rgba(255, 255, 255, 0.92));
+  border-color: rgba(203, 71, 92, 0.18);
+}
+
+.hero-mini-total {
+  background: linear-gradient(180deg, rgba(231, 240, 251, 0.95), rgba(255, 255, 255, 0.92));
+  border-color: rgba(21, 60, 104, 0.18);
+}
+
+.date-toolbar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-toolbar-wrap {
+  display: flex;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+}
+
+.date-toolbar.is-fixed {
+  position: fixed;
+  top: 8px;
+  z-index: 40;
+}
+
+.nav-arrow,
+.date-picker input {
+  border: 1px solid var(--line-strong);
+  background: var(--surface-strong);
+  color: var(--text);
+}
+
+.nav-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.nav-arrow:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: #91aac7;
+  background: var(--brand-soft);
+}
+
+.nav-arrow:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.nav-arrow span {
+  font-size: 1.4rem;
+}
+
+.date-picker input {
+  min-width: 162px;
+  padding: 11px 14px;
+  border-radius: 14px;
+}
+
+.surface-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  border-radius: 16px;
+  background: linear-gradient(90deg, rgba(21, 60, 104, 0.08), rgba(21, 60, 104, 0.02));
+  border: 1px solid rgba(191, 204, 220, 0.88);
+}
+
+.surface-banner strong {
+  color: var(--brand-strong);
+}
+
+.surface-banner span {
+  color: var(--text-muted);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.mobile-card-list {
+  display: none;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1100px;
+}
+
+.data-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 16px 14px;
+  text-align: center;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: #f4f7fb;
+  border-bottom: 1px solid var(--line);
+}
+
+.data-table tbody td,
+.data-table tbody th {
+  padding: 14px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.data-table tbody tr {
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.data-table tbody tr:hover {
+  background: rgba(231, 240, 251, 0.42);
+}
+
+.data-table tbody tr:last-child td,
+.data-table tbody tr:last-child th {
+  border-bottom: 0;
+}
+
+.ticker-cell {
+  display: grid;
+  gap: 4px;
+}
+
+.ticker-name {
+  font-size: 1rem;
+}
+
+.ticker-code {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+}
+
+.price-stack,
+.reason-stack {
+  display: grid;
+  gap: 4px;
+}
+
+.reason-comment {
+  color: var(--brand);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.price-main {
+  font-weight: 700;
+}
+
+.price-sub,
+.reason-bullet,
+.empty-row {
+  color: var(--text-muted);
+}
+
+.reason-bullet {
+  line-height: 1.45;
+}
+
+.empty-row {
+  padding: 26px 14px;
+  text-align: center;
+}
+
+.mobile-empty {
+  padding: 20px 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.signal-badge {
+  padding: 9px 12px;
+  font-weight: 600;
+}
+
+.signal-positive {
+  background: var(--positive-soft);
+  color: var(--positive);
+}
+
+.signal-neutral {
+  background: var(--neutral-soft);
+  color: var(--neutral);
+}
+
+.signal-negative {
+  background: var(--negative-soft);
+  color: var(--negative);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: reveal-up 540ms ease forwards;
+}
+
+.reveal:nth-child(2) {
+  animation-delay: 70ms;
+}
+
+.table-row-enter {
+  animation: row-in 320ms ease;
+}
+
+@keyframes reveal-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes row-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading-spread {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 720px) {
+  body::before {
+    display: none;
+  }
+
+  .container {
+    width: min(calc(100% - 20px), var(--max-width));
+  }
+
+  .site-header {
+    position: relative;
+    top: auto;
+    z-index: auto;
+    padding-top: 0;
+    border-bottom: 0;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .hero-section {
+    padding-top: 8px;
+  }
+
+  .hero-bar,
+  .table-panel {
+    padding: 16px;
+  }
+
+  .panel {
+    border-radius: 28px;
+  }
+
+  .header-inner {
+    min-height: auto;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 6px;
+    padding: 6px 0 8px;
+  }
+
+  .brand {
+    width: 100%;
+    gap: 12px;
+    min-width: 0;
+    padding: 12px 14px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(215, 224, 236, 0.92);
+    box-shadow: 0 10px 24px rgba(20, 42, 73, 0.06);
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+    flex: 0 0 40px;
+  }
+
+  .brand strong {
+    font-size: 0.96rem;
+    letter-spacing: 0.04em;
+  }
+
+  .brand small {
+    margin-top: 2px;
+    font-size: 0.76rem;
+    line-height: 1.35;
+  }
+
+  .header-status {
+    width: 100%;
+  }
+
+  .status-chip {
+    justify-content: flex-start;
+    width: 100%;
+    padding: 9px 12px;
+    font-size: 0.76rem;
+    background: rgba(243, 247, 252, 0.96);
+    border-color: rgba(191, 204, 220, 0.88);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  }
+
+  .hero-mini-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .date-toolbar {
+    width: 100%;
+  }
+
+  .table-heading-bar {
+    display: block;
+    margin-bottom: -2px;
+  }
+
+  .date-toolbar-wrap {
+    margin-bottom: 10px;
+  }
+
+  .section-heading-spread {
+    position: static;
+    padding: 0;
+    margin: 0 0 12px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .section-heading-spread > div:first-child {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .section-heading-spread .eyebrow {
+    margin-bottom: 0;
+  }
+
+  .section-heading-spread h2 {
+    line-height: 1.22;
+  }
+
+  .date-picker {
+    flex: 1;
+  }
+
+  .date-picker input {
+    width: 100%;
+  }
+
+  .table-wrap {
+    display: none;
+  }
+
+  .mobile-card-list {
+    display: grid;
+    gap: 16px;
+  }
+
+  .mobile-stock-card {
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .positive-card {
+    background: linear-gradient(180deg, rgba(230, 247, 239, 0.9), rgba(255, 255, 255, 0.96));
+  }
+
+  .neutral-card {
+    background: linear-gradient(180deg, rgba(239, 243, 248, 0.92), rgba(255, 255, 255, 0.96));
+  }
+
+  .negative-card {
+    background: linear-gradient(180deg, rgba(253, 236, 239, 0.9), rgba(255, 255, 255, 0.96));
+  }
+
+  .mobile-stock-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .mobile-stock-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .mobile-metric {
+    display: grid;
+    gap: 6px;
+    padding: 13px 14px;
+    border-radius: 16px;
+    background: var(--surface-soft);
+    border: 1px solid var(--line);
+  }
+
+  .mobile-metric span,
+  .mobile-metric em {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-style: normal;
+  }
+
+  .mobile-metric strong {
+    font-size: 0.98rem;
+    line-height: 1.35;
+    word-break: keep-all;
+  }
+
+  .mobile-metric em {
+    margin-top: 2px;
+  }
+
+  .mobile-reason {
+    display: grid;
+    gap: 10px;
+  }
+
+  .mobile-reason .reason-comment {
+    font-size: 0.9rem;
+  }
+
+  .mobile-reason strong {
+    line-height: 1.45;
+  }
+
+  .mobile-reason-list {
+    margin: 8px 0 0;
+    padding-left: 18px;
+    color: var(--text-muted);
+  }
+
+  .mobile-reason-list li + li {
+    margin-top: 6px;
+  }
+
+  .mobile-reason-details {
+    border-top: 1px dashed var(--line-strong);
+    padding-top: 10px;
+  }
+
+  .mobile-reason-details summary {
+    cursor: pointer;
+    color: var(--brand);
+    font-weight: 600;
+    list-style: none;
+  }
+
+  .mobile-reason-details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-reason-details summary::after {
+    content: " +";
+    color: var(--text-muted);
+  }
+
+  .mobile-reason-details[open] summary::after {
+    content: " -";
+  }
+
+  .table-panel {
+    padding: 18px;
+  }
+
+  .table-panel.reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .surface-banner {
+    gap: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    border-radius: 20px;
+    
+  }
+
+  .surface-banner strong,
+  .surface-banner span {
+    display: block;
+  }
+
+  .date-toolbar {
+    display: flex;
+    width: 100%;
+    padding: 6px;
+    border-radius: 20px;
+    background: rgba(248, 251, 254, 0.94);
+    border: 1px solid rgba(191, 204, 220, 0.76);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  }
+
+  .date-toolbar.is-fixed {
+    top: 8px;
+  }
+
+  .nav-arrow {
+    width: 42px;
+    height: 42px;
+    border-radius: 16px;
+  }
+
+  .date-picker input {
+    min-width: 0;
+    border-radius: 18px;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .status-chip {
+    font-size: 0.74rem;
+  }
+}
+
+    html,
+    body {
+      background: transparent;
+    }
+    body::before { display: none; }
+    .site-shell { min-height: auto; }
+    .site-main { padding-top: 0; padding-bottom: 20px; }
+    .container { width: 100% !important; max-width: none !important; margin: 0 !important; }
+    .section { padding-top: 0; }
+    .panel { box-shadow: none; }
+    .table-panel { padding: 0; border: 0; background: transparent; box-shadow: none; border-radius: 0; }
+    .table-heading-bar { align-items: center; margin-bottom: 10px; }
+    .section-heading { margin-bottom: 10px; }
+    .date-toolbar-wrap { display: none; }
+    .report-mini-grid {
+      margin: 8px 0 10px;
+    }
+    .surface-banner { margin-bottom: 8px; padding: 10px 12px; border-radius: 14px; }
+    .reveal,
+    .table-row-enter { opacity: 1; transform: none; animation: none; }
+    @media (max-width: 720px) {
+      .site-main { padding-bottom: 16px; }
+      .table-panel { padding: 0; border-radius: 0; }
+      .table-heading-bar { margin-bottom: 12px; }
+      .section-heading h2 { font-size: 1.35rem; line-height: 1.25; }
+      .surface-banner { padding: 10px 12px; margin-bottom: 8px; border-radius: 14px; }
+      .report-mini-grid { margin: 8px 0 10px; }
+      .hero-mini-grid { gap: 8px; }
+      .hero-mini-card { padding: 10px 12px; border-radius: 14px; }
+      .mobile-card-list { gap: 8px; }
+      .mobile-stock-card { padding: 12px; border-radius: 14px; }
+      .mobile-stock-head { margin-bottom: 12px; }
+      .mobile-stock-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-bottom: 10px; }
+      .mobile-metric { padding: 9px; border-radius: 14px; }
+      .mobile-metric strong { font-size: 0.92rem; line-height: 1.35; overflow-wrap: anywhere; }
+      .mobile-metric em { display: block; margin-top: 4px; font-size: 0.78rem; }
+    }
+    @media (max-width: 420px) {
+      .mobile-stock-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+      .mobile-stock-card { padding: 10px; }
+      .mobile-metric { padding: 8px; }
+      .mobile-metric strong { font-size: 0.88rem; }
+      .mobile-metric em { font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body data-page="report-static">
+  <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+  <div class="site-shell">
+    <main id="main-content" class="site-main">
+      <section class="section">
+        <div class="container">
+          <section class="panel table-panel reveal">
+            <div class="table-heading-bar">
+              <div class="section-heading section-heading-spread">
+                <div>
+                  <p class="eyebrow">종목 8개</p>
+                  <h2>종목 8개 요약</h2>
+                </div>
+              </div>
+              <div class="header-status">
+                <span class="status-chip">기준일 2026-03-26</span>
+              </div>
+            </div>
+
+            <div class="surface-banner">
+              <strong>2026-03-26</strong>
+              <span>분석 대상 8종목, 매수 3건, 보유 2건, 매도 3건</span>
+            </div>
+
+            <div class="hero-mini-grid report-mini-grid">
+              <article class="hero-mini-card hero-mini-buy">
+                <span class="metric-label">매수</span>
+                <strong class="metric-value">3</strong>
+              </article>
+              <article class="hero-mini-card hero-mini-hold">
+                <span class="metric-label">보유</span>
+                <strong class="metric-value">2</strong>
+              </article>
+              <article class="hero-mini-card hero-mini-sell">
+                <span class="metric-label">매도</span>
+                <strong class="metric-value">3</strong>
+              </article>
+              <article class="hero-mini-card hero-mini-total">
+                <span class="metric-label">전체 제시 수</span>
+                <strong class="metric-value">8</strong>
+              </article>
+            </div>
+
+            <div class="table-wrap">
+              <table class="data-table">
+                <caption class="sr-only">상위 종목 요약 표</caption>
+                <thead>
+                  <tr>
+                    <th>종목</th>
+                    <th>시그널</th>
+                    <th>신뢰도</th>
+                    <th>현재가</th>
+                    <th>진입 제안</th>
+                    <th>목표가</th>
+                    <th>손절가</th>
+                    <th>판단 근거</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-row-enter">
+  <th scope="row">
+    <div class="ticker-cell">
+      <strong class="ticker-name">맥쿼리인프라</strong>
+      <span class="ticker-code">088980</span>
+    </div>
+  </th>
+  <td><span class="signal-badge signal-neutral">보유</span></td>
+  <td>85.86%</td>
+  <td>11,460</td>
+  <td><div class="price-stack"><span class="price-main">진입 구간</span><span class="price-sub">11,402.7 ~ 11,460</span></div></td>
+  <td><div class="price-stack"><span class="price-main">1차 11,803.8</span><span class="price-sub">2차 12,010.08</span></div></td>
+  <td>11,001.6</td>
+  <td><div class="reason-stack"><div class="reason-comment">추세 확인 필요, 보유 관점</div><strong>확률 분포: 매수 8.01%, 보유 85.86%, 매도 6.13%</strong><div class="reason-bullet">예상 수익률: 0.06%</div><div class="reason-bullet">검증 정확도: 80.14%</div></div></td>
+</tr><tr class="table-row-enter">
+  <th scope="row">
+    <div class="ticker-cell">
+      <strong class="ticker-name">일진전기</strong>
+      <span class="ticker-code">103590</span>
+    </div>
+  </th>
+  <td><span class="signal-badge signal-positive">매수</span></td>
+  <td>62.11%</td>
+  <td>78,000</td>
+  <td><div class="price-stack"><span class="price-main">진입 구간</span><span class="price-sub">77,766 ~ 80,340</span></div></td>
+  <td><div class="price-stack"><span class="price-main">1차 80,340</span><span class="price-sub">2차 81,744</span></div></td>
+  <td>74,880</td>
+  <td><div class="reason-stack"><div class="reason-comment">목표가 기대값 반영, 매수 관점</div><strong>확률 분포: 매수 62.11%, 보유 4.13%, 매도 33.76%</strong><div class="reason-bullet">예상 수익률: 0.85%</div><div class="reason-bullet">검증 정확도: 54.71%</div></div></td>
+</tr><tr class="table-row-enter">
+  <th scope="row">
+    <div class="ticker-cell">
+      <strong class="ticker-name">삼성전자</strong>
+      <span class="ticker-code">005930</span>
+    </div>
+  </th>
+  <td><span class="signal-badge signal-positive">매수</span></td>
+  <td>58.37%</td>
+  <td>180,100</td>
+  <td><div class="price-stack"><span class="price-main">진입 구간</span><span class="price-sub">179,559.7 ~ 185,503</span></div></td>
+  <td><div class="price-stack"><span class="price-main">1차 185,503</span><span class="price-sub">2차 188,744.8</span></div></td>
+  <td>172,896</td>
+  <td><div class="reason-stack"><div class="reason-comment">목표가 기대값 반영, 매수 관점</div><strong>확률 분포: 매수 58.37%, 보유 3.30%, 매도 38.33%</strong><div class="reason-bullet">예상 수익률: 0.60%</div><div class="reason-bullet">검증 정확도: 44.41%</div></div></td>
+</tr><tr class="table-row-enter">
+  <th scope="row">
+    <div class="ticker-cell">
+      <strong class="ticker-name">HD현대중공업</strong>
+      <span class="ticker-code">329180</span>
+    </div>
+  </th>
+  <td><span class="signal-badge signal-positive">매수</span></td>
+  <td>57.42%</td>
+  <td>511,000</td>
+  <td><div class="price-stack"><span class="price-main">진입 구간</span><span class="price-sub">509,467 ~ 526,330</span></div></td>
+  <td><div class="price-stack"><span class="price-main">1차 526,330</span><span class="price-sub">2차 535,528</span></div></td>
+  <td>490,560</td>
+  <td><div class="reason-stack"><div class="reason-comment">목표가 기대값 반영, 매수 관점</div><strong>확률 분포: 매수 57.42%, 보유 5.77%, 매도 36.81%</strong><div class="reason-bullet">예상 수익률: 0.62%</div><div class="reason-bullet">검증 정확도: 66.34%</div></div></td>
+</tr><tr class="table-row-enter">
+  <th scope="row">
+    <div class="ticker-cell">
+      <strong class="ticker-name">우리기술</strong>
+      <span class="ticker-code">032820</span>
+    </div>
+  </th>
+  <td><span class="signal-badge signal-negative">매도</span></td>
+  <td>56.63%</td>
+  <td>24,000</td>
+  <td><div class="price-stack"><span class="price-main">정리 기준</span><span class="price-sub">24,000 ~ 24,000</span></div></td>
+  <td><div class="price-stack"><span class="price-main">1차 23,520</span><span class="price-sub">2차 23,040</span></div></td>
+  <td>24,480</td>
+  <td><div class="reason-stack"><div class="reason-comment">방어 대응 우선, 매도 관점</div><strong>확률 분포: 매수 39.98%, 보유 3.39%, 매도 56.63%</strong><div class="reason-bullet">예상 수익률: -0.50%</div><div class="reason-bullet">검증 정확도: 51.92%</div></div></td>
+</tr><tr class="table-row-enter">
+  <th scope="row">
+    <div class="ticker-cell">
+      <strong class="ticker-name">TIGER 미국S&amp;P500</strong>
+      <span class="ticker-code">360750</span>
+    </div>
+  </th>
+  <td><span class="signal-badge signal-neutral">보유</span></td>
+  <td>56.52%</td>
+  <td>24,580</td>
+  <td><div class="price-stack"><span class="price-main">진입 구간</span><span class="price-sub">24,457.1 ~ 24,580</span></div></td>
+  <td><div class="price-stack"><span class="price-main">1차 25,317.4</span><span class="price-sub">2차 25,759.84</span></div></td>
+  <td>23,596.8</td>
+  <td><div class="reason-stack"><div class="reason-comment">추세 확인 필요, 보유 관점</div><strong>확률 분포: 매수 28.55%, 보유 56.52%, 매도 14.93%</strong><div class="reason-bullet">예상 수익률: 0.41%</div><div class="reason-bullet">검증 정확도: 72.25%</div></div></td>
+</tr><tr class="table-row-enter">
+  <th scope="row">
+    <div class="ticker-cell">
+      <strong class="ticker-name">신도기연</strong>
+      <span class="ticker-code">290520</span>
+    </div>
+  </th>
+  <td><span class="signal-badge signal-negative">매도</span></td>
+  <td>52.49%</td>
+  <td>2,435</td>
+  <td><div class="price-stack"><span class="price-main">정리 기준</span><span class="price-sub">2,435 ~ 2,435</span></div></td>
+  <td><div class="price-stack"><span class="price-main">1차 2,386.3</span><span class="price-sub">2차 2,337.6</span></div></td>
+  <td>2,483.7</td>
+  <td><div class="reason-stack"><div class="reason-comment">방어 대응 우선, 매도 관점</div><strong>확률 분포: 매수 43.70%, 보유 3.81%, 매도 52.49%</strong><div class="reason-bullet">예상 수익률: -0.26%</div><div class="reason-bullet">검증 정확도: 57.18%</div></div></td>
+</tr><tr class="table-row-enter">
+  <th scope="row">
+    <div class="ticker-cell">
+      <strong class="ticker-name">센서뷰</strong>
+      <span class="ticker-code">321370</span>
+    </div>
+  </th>
+  <td><span class="signal-badge signal-negative">매도</span></td>
+  <td>50.95%</td>
+  <td>3,520</td>
+  <td><div class="price-stack"><span class="price-main">정리 기준</span><span class="price-sub">3,520 ~ 3,520</span></div></td>
+  <td><div class="price-stack"><span class="price-main">1차 3,449.6</span><span class="price-sub">2차 3,379.2</span></div></td>
+  <td>3,590.4</td>
+  <td><div class="reason-stack"><div class="reason-comment">방어 대응 우선, 매도 관점</div><strong>확률 분포: 매수 46.49%, 보유 2.56%, 매도 50.95%</strong><div class="reason-bullet">예상 수익률: -0.13%</div><div class="reason-bullet">검증 정확도: 41.46%</div></div></td>
+</tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="mobile-card-list">
+              <article class="mobile-stock-card neutral-card">
+  <div class="mobile-stock-head">
+    <div class="ticker-cell">
+      <strong class="ticker-name">맥쿼리인프라</strong>
+      <span class="ticker-code">088980</span>
+    </div>
+    <span class="signal-badge signal-neutral">보유</span>
+  </div>
+  <div class="mobile-stock-grid">
+    <div class="mobile-metric"><span>신뢰도</span><strong>85.86%</strong></div>
+    <div class="mobile-metric"><span>현재가</span><strong>11,460</strong></div>
+    <div class="mobile-metric"><span>진입 구간</span><strong>11,402.7</strong><em>~ 11,460</em></div>
+    <div class="mobile-metric"><span>목표가</span><strong>1차 11,803.8</strong><em>2차 12,010.08</em></div>
+    <div class="mobile-metric"><span>손절가</span><strong>11,001.6</strong></div>
+    <div class="mobile-metric"><span>예상 수익률</span><strong>0.06%</strong></div>
+  </div>
+  <div class="mobile-reason">
+    <div class="reason-comment">추세 확인 필요, 보유 관점</div>
+    <strong>확률 분포: 매수 8.01%, 보유 85.86%, 매도 6.13%</strong>
+    <details class="mobile-reason-details"><summary>판단 근거 더보기</summary><ul class="mobile-reason-list"><li>예상 수익률: 0.06%</li><li>검증 정확도: 80.14%</li><li>검증 Macro F1: 29.66%</li><li>테스트 정확도: 88.84%</li></ul></details>
+  </div>
+</article><article class="mobile-stock-card positive-card">
+  <div class="mobile-stock-head">
+    <div class="ticker-cell">
+      <strong class="ticker-name">일진전기</strong>
+      <span class="ticker-code">103590</span>
+    </div>
+    <span class="signal-badge signal-positive">매수</span>
+  </div>
+  <div class="mobile-stock-grid">
+    <div class="mobile-metric"><span>신뢰도</span><strong>62.11%</strong></div>
+    <div class="mobile-metric"><span>현재가</span><strong>78,000</strong></div>
+    <div class="mobile-metric"><span>진입 구간</span><strong>77,766</strong><em>~ 80,340</em></div>
+    <div class="mobile-metric"><span>목표가</span><strong>1차 80,340</strong><em>2차 81,744</em></div>
+    <div class="mobile-metric"><span>손절가</span><strong>74,880</strong></div>
+    <div class="mobile-metric"><span>예상 수익률</span><strong>0.85%</strong></div>
+  </div>
+  <div class="mobile-reason">
+    <div class="reason-comment">목표가 기대값 반영, 매수 관점</div>
+    <strong>확률 분포: 매수 62.11%, 보유 4.13%, 매도 33.76%</strong>
+    <details class="mobile-reason-details"><summary>판단 근거 더보기</summary><ul class="mobile-reason-list"><li>예상 수익률: 0.85%</li><li>검증 정확도: 54.71%</li><li>검증 Macro F1: 31.82%</li><li>테스트 정확도: 56.67%</li></ul></details>
+  </div>
+</article><article class="mobile-stock-card positive-card">
+  <div class="mobile-stock-head">
+    <div class="ticker-cell">
+      <strong class="ticker-name">삼성전자</strong>
+      <span class="ticker-code">005930</span>
+    </div>
+    <span class="signal-badge signal-positive">매수</span>
+  </div>
+  <div class="mobile-stock-grid">
+    <div class="mobile-metric"><span>신뢰도</span><strong>58.37%</strong></div>
+    <div class="mobile-metric"><span>현재가</span><strong>180,100</strong></div>
+    <div class="mobile-metric"><span>진입 구간</span><strong>179,559.7</strong><em>~ 185,503</em></div>
+    <div class="mobile-metric"><span>목표가</span><strong>1차 185,503</strong><em>2차 188,744.8</em></div>
+    <div class="mobile-metric"><span>손절가</span><strong>172,896</strong></div>
+    <div class="mobile-metric"><span>예상 수익률</span><strong>0.60%</strong></div>
+  </div>
+  <div class="mobile-reason">
+    <div class="reason-comment">목표가 기대값 반영, 매수 관점</div>
+    <strong>확률 분포: 매수 58.37%, 보유 3.30%, 매도 38.33%</strong>
+    <details class="mobile-reason-details"><summary>판단 근거 더보기</summary><ul class="mobile-reason-list"><li>예상 수익률: 0.60%</li><li>검증 정확도: 44.41%</li><li>검증 Macro F1: 33.32%</li><li>테스트 정확도: 52.63%</li></ul></details>
+  </div>
+</article><article class="mobile-stock-card positive-card">
+  <div class="mobile-stock-head">
+    <div class="ticker-cell">
+      <strong class="ticker-name">HD현대중공업</strong>
+      <span class="ticker-code">329180</span>
+    </div>
+    <span class="signal-badge signal-positive">매수</span>
+  </div>
+  <div class="mobile-stock-grid">
+    <div class="mobile-metric"><span>신뢰도</span><strong>57.42%</strong></div>
+    <div class="mobile-metric"><span>현재가</span><strong>511,000</strong></div>
+    <div class="mobile-metric"><span>진입 구간</span><strong>509,467</strong><em>~ 526,330</em></div>
+    <div class="mobile-metric"><span>목표가</span><strong>1차 526,330</strong><em>2차 535,528</em></div>
+    <div class="mobile-metric"><span>손절가</span><strong>490,560</strong></div>
+    <div class="mobile-metric"><span>예상 수익률</span><strong>0.62%</strong></div>
+  </div>
+  <div class="mobile-reason">
+    <div class="reason-comment">목표가 기대값 반영, 매수 관점</div>
+    <strong>확률 분포: 매수 57.42%, 보유 5.77%, 매도 36.81%</strong>
+    <details class="mobile-reason-details"><summary>판단 근거 더보기</summary><ul class="mobile-reason-list"><li>예상 수익률: 0.62%</li><li>검증 정확도: 66.34%</li><li>검증 Macro F1: 34.60%</li><li>테스트 정확도: 56.34%</li></ul></details>
+  </div>
+</article><article class="mobile-stock-card negative-card">
+  <div class="mobile-stock-head">
+    <div class="ticker-cell">
+      <strong class="ticker-name">우리기술</strong>
+      <span class="ticker-code">032820</span>
+    </div>
+    <span class="signal-badge signal-negative">매도</span>
+  </div>
+  <div class="mobile-stock-grid">
+    <div class="mobile-metric"><span>신뢰도</span><strong>56.63%</strong></div>
+    <div class="mobile-metric"><span>현재가</span><strong>24,000</strong></div>
+    <div class="mobile-metric"><span>정리 기준</span><strong>24,000</strong><em>~ 24,000</em></div>
+    <div class="mobile-metric"><span>목표가</span><strong>1차 23,520</strong><em>2차 23,040</em></div>
+    <div class="mobile-metric"><span>손절가</span><strong>24,480</strong></div>
+    <div class="mobile-metric"><span>예상 수익률</span><strong>-0.50%</strong></div>
+  </div>
+  <div class="mobile-reason">
+    <div class="reason-comment">방어 대응 우선, 매도 관점</div>
+    <strong>확률 분포: 매수 39.98%, 보유 3.39%, 매도 56.63%</strong>
+    <details class="mobile-reason-details"><summary>판단 근거 더보기</summary><ul class="mobile-reason-list"><li>예상 수익률: -0.50%</li><li>검증 정확도: 51.92%</li><li>검증 Macro F1: 29.06%</li><li>테스트 정확도: 53.84%</li></ul></details>
+  </div>
+</article><article class="mobile-stock-card neutral-card">
+  <div class="mobile-stock-head">
+    <div class="ticker-cell">
+      <strong class="ticker-name">TIGER 미국S&amp;P500</strong>
+      <span class="ticker-code">360750</span>
+    </div>
+    <span class="signal-badge signal-neutral">보유</span>
+  </div>
+  <div class="mobile-stock-grid">
+    <div class="mobile-metric"><span>신뢰도</span><strong>56.52%</strong></div>
+    <div class="mobile-metric"><span>현재가</span><strong>24,580</strong></div>
+    <div class="mobile-metric"><span>진입 구간</span><strong>24,457.1</strong><em>~ 24,580</em></div>
+    <div class="mobile-metric"><span>목표가</span><strong>1차 25,317.4</strong><em>2차 25,759.84</em></div>
+    <div class="mobile-metric"><span>손절가</span><strong>23,596.8</strong></div>
+    <div class="mobile-metric"><span>예상 수익률</span><strong>0.41%</strong></div>
+  </div>
+  <div class="mobile-reason">
+    <div class="reason-comment">추세 확인 필요, 보유 관점</div>
+    <strong>확률 분포: 매수 28.55%, 보유 56.52%, 매도 14.93%</strong>
+    <details class="mobile-reason-details"><summary>판단 근거 더보기</summary><ul class="mobile-reason-list"><li>예상 수익률: 0.41%</li><li>검증 정확도: 72.25%</li><li>검증 Macro F1: 28.01%</li><li>테스트 정확도: 96.35%</li></ul></details>
+  </div>
+</article><article class="mobile-stock-card negative-card">
+  <div class="mobile-stock-head">
+    <div class="ticker-cell">
+      <strong class="ticker-name">신도기연</strong>
+      <span class="ticker-code">290520</span>
+    </div>
+    <span class="signal-badge signal-negative">매도</span>
+  </div>
+  <div class="mobile-stock-grid">
+    <div class="mobile-metric"><span>신뢰도</span><strong>52.49%</strong></div>
+    <div class="mobile-metric"><span>현재가</span><strong>2,435</strong></div>
+    <div class="mobile-metric"><span>정리 기준</span><strong>2,435</strong><em>~ 2,435</em></div>
+    <div class="mobile-metric"><span>목표가</span><strong>1차 2,386.3</strong><em>2차 2,337.6</em></div>
+    <div class="mobile-metric"><span>손절가</span><strong>2,483.7</strong></div>
+    <div class="mobile-metric"><span>예상 수익률</span><strong>-0.26%</strong></div>
+  </div>
+  <div class="mobile-reason">
+    <div class="reason-comment">방어 대응 우선, 매도 관점</div>
+    <strong>확률 분포: 매수 43.70%, 보유 3.81%, 매도 52.49%</strong>
+    <details class="mobile-reason-details"><summary>판단 근거 더보기</summary><ul class="mobile-reason-list"><li>예상 수익률: -0.26%</li><li>검증 정확도: 57.18%</li><li>검증 Macro F1: 31.75%</li><li>테스트 정확도: 46.43%</li></ul></details>
+  </div>
+</article><article class="mobile-stock-card negative-card">
+  <div class="mobile-stock-head">
+    <div class="ticker-cell">
+      <strong class="ticker-name">센서뷰</strong>
+      <span class="ticker-code">321370</span>
+    </div>
+    <span class="signal-badge signal-negative">매도</span>
+  </div>
+  <div class="mobile-stock-grid">
+    <div class="mobile-metric"><span>신뢰도</span><strong>50.95%</strong></div>
+    <div class="mobile-metric"><span>현재가</span><strong>3,520</strong></div>
+    <div class="mobile-metric"><span>정리 기준</span><strong>3,520</strong><em>~ 3,520</em></div>
+    <div class="mobile-metric"><span>목표가</span><strong>1차 3,449.6</strong><em>2차 3,379.2</em></div>
+    <div class="mobile-metric"><span>손절가</span><strong>3,590.4</strong></div>
+    <div class="mobile-metric"><span>예상 수익률</span><strong>-0.13%</strong></div>
+  </div>
+  <div class="mobile-reason">
+    <div class="reason-comment">방어 대응 우선, 매도 관점</div>
+    <strong>확률 분포: 매수 46.49%, 보유 2.56%, 매도 50.95%</strong>
+    <details class="mobile-reason-details"><summary>판단 근거 더보기</summary><ul class="mobile-reason-list"><li>예상 수익률: -0.13%</li><li>검증 정확도: 41.46%</li><li>검증 Macro F1: 25.63%</li><li>테스트 정확도: 48.19%</li></ul></details>
+  </div>
+</article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

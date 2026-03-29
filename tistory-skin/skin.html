@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[##_page_title_##]</title>
+  <meta name="description" content="[##_desc_##]">
+  <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]">
+  <script src="//t1.daumcdn.net/tistory_admin/lib/jquery/jquery-1.12.4.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body id="[##_body_id_##]">
+<s_t3>
+  <div class="app-shell">
+    <aside class="app-sidebar">
+      <a class="brand-block" href="[##_blog_link_##]">
+        <img class="brand-mark" src="./investment-log-mark.svg" alt="">
+        <div class="brand-copy">
+          <strong>[##_title_##]</strong>
+          <span>[##_desc_##]</span>
+        </div>
+      </a>
+
+      <details class="sidebar-fold sidebar-menu" open>
+        <summary class="sidebar-fold-summary">메뉴</summary>
+        <section class="sidebar-section">
+          <nav class="menu-block" aria-label="블로그 메뉴">
+            [##_blog_menu_##]
+          </nav>
+        </section>
+      </details>
+
+      <details class="sidebar-fold sidebar-category" open>
+        <summary class="sidebar-fold-summary">카테고리</summary>
+        <section class="sidebar-section">
+          <div class="category-block">
+            [##_category_list_##]
+          </div>
+        </section>
+      </details>
+
+      <s_tag>
+        <section class="sidebar-section sidebar-tags">
+          <p class="section-kicker">태그</p>
+          <div class="tag-cloud">
+            <s_tag_rep>
+              <a href="[##_tag_link_##]" class="[##_tag_class_##]">[##_tag_name_##]</a>
+            </s_tag_rep>
+          </div>
+        </section>
+      </s_tag>
+
+      <section class="sidebar-section sidebar-recent-records">
+        <p class="section-kicker">최근 기록</p>
+        <div class="sidebar-list">
+          <s_list>
+            <s_list_rep>
+              <a class="sidebar-item" href="[##_list_rep_link_##]">
+                <strong>[##_list_rep_title_##]</strong>
+                <span>[##_list_rep_regdate_##]</span>
+              </a>
+            </s_list_rep>
+            <s_list_empty>
+              <div class="sidebar-item">
+                <strong>표시할 게시물이 없습니다.</strong>
+                <span>조건에 맞는 글이 아직 없습니다.</span>
+              </div>
+            </s_list_empty>
+          </s_list>
+        </div>
+      </section>
+    </aside>
+
+    <main class="app-main">
+      <s_article_rep>
+        <s_index_article_rep>
+          <div class="feed-list index-only">
+            <article class="post-row">
+              <a class="post-link" href="[##_article_rep_link_##]">
+                <div class="post-thumb">
+                  <img class="post-thumb-fallback" src="./investment-log-mark.svg" alt="">
+                  <s_article_rep_thumbnail>
+                    <img class="post-thumb-image" src="[##_article_rep_thumbnail_url_##]" alt="">
+                  </s_article_rep_thumbnail>
+                </div>
+                <div class="post-card-content">
+                  <div class="post-row-head">
+                    <ul class="meta-row">
+                      <li><a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a></li>
+                      <li>[##_article_rep_simple_date_##]</li>
+                      <s_rp_count><li>댓글 [##_article_rep_rp_cnt_##]</li></s_rp_count>
+                    </ul>
+                  </div>
+                  <h2 class="post-row-title">[##_article_rep_title_##]</h2>
+                  <p class="post-row-summary">[##_article_rep_summary_##]</p>
+                </div>
+              </a>
+            </article>
+          </div>
+        </s_index_article_rep>
+
+        <s_permalink_article_rep>
+          <section class="article-view">
+            <article class="article-header">
+              <p class="card-kicker">기록</p>
+              <h1 class="article-title">[##_article_rep_title_##]</h1>
+              <ul class="meta-row">
+                <li><a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a></li>
+                <li>[##_article_rep_date_##]</li>
+              </ul>
+            </article>
+
+            <section class="article-body-wrap">
+              <div class="article-body">
+                [##_article_rep_desc_##]
+              </div>
+            </section>
+
+            <s_tag_label>
+              <section class="article-section">
+                <p class="card-kicker">태그</p>
+                <div class="tag-cloud">
+                  [##_tag_label_rep_##]
+                </div>
+              </section>
+            </s_tag_label>
+
+            <s_article_related>
+              <section class="article-section">
+                <p class="card-kicker">같은 분류의 기록</p>
+                <div class="related-list">
+                  <s_article_related_rep>
+                    <a class="related-item" href="[##_article_related_rep_link_##]">
+                      <strong>[##_article_related_rep_title_##]</strong>
+                      <span>[##_article_related_rep_date_##]</span>
+                    </a>
+                  </s_article_related_rep>
+                </div>
+              </section>
+            </s_article_related>
+
+            <section class="article-section comments-section">
+              <s_rp>
+                <h2 class="comment-title">댓글 <s_rp_count>[##_article_rep_rp_cnt_##]</s_rp_count></h2>
+
+                <s_rp_container>
+                  <div class="comment-list">
+                    <ul>
+                      <s_rp_rep>
+                        <li id="[##_rp_rep_id_##]">
+                          <div class="comment-meta">
+                            <span class="comment-author">[##_rp_rep_name_##]</span>
+                            <span class="comment-date">[##_rp_rep_date_##]</span>
+                          </div>
+                          <div class="comment-body">[##_rp_rep_desc_##]</div>
+                          <a href="#" class="comment-reply" onclick="[##_rp_rep_onclick_reply_##]">답글</a>
+                          <s_rp2_container>
+                            <ul class="comment-replies">
+                              <s_rp2_rep>
+                                <li id="[##_rp_rep_id_##]">
+                                  <div class="comment-meta">
+                                    <span class="comment-author">[##_rp_rep_name_##]</span>
+                                    <span class="comment-date">[##_rp_rep_date_##]</span>
+                                  </div>
+                                  <div class="comment-body">[##_rp_rep_desc_##]</div>
+                                </li>
+                              </s_rp2_rep>
+                            </ul>
+                          </s_rp2_container>
+                        </li>
+                      </s_rp_rep>
+                    </ul>
+                  </div>
+                </s_rp_container>
+
+                <s_rp_input_form>
+                  <div class="comment-form">
+                    <s_rp_member>
+                      <div class="comment-fields">
+                        <s_rp_guest>
+                          <input type="text" name="[##_rp_input_name_##]" placeholder="이름" value="[##_guest_name_##]">
+                          <input type="password" name="[##_rp_input_password_##]" maxlength="8" placeholder="비밀번호" value="[##_rp_admin_check_##]">
+                        </s_rp_guest>
+                        <label class="comment-secret">
+                          <input type="checkbox" name="[##_rp_input_is_secret_##]">
+                          <span>비밀글</span>
+                        </label>
+                      </div>
+                    </s_rp_member>
+                    <textarea id="[##_rp_input_comment_##]" name="[##_rp_input_comment_##]" rows="4" placeholder="댓글을 입력하세요."></textarea>
+                    <div class="comment-submit">
+                      <button type="submit" onclick="[##_rp_onclick_submit_##]">등록</button>
+                    </div>
+                  </div>
+                </s_rp_input_form>
+              </s_rp>
+            </section>
+          </section>
+        </s_permalink_article_rep>
+      </s_article_rep>
+
+      <s_page_rep>
+        <section class="article-view">
+          <article class="article-header">
+            <p class="card-kicker">페이지</p>
+            <h1 class="article-title">[##_article_rep_title_##]</h1>
+            <ul class="meta-row">
+              <li>[##_article_rep_simple_date_##]</li>
+            </ul>
+          </article>
+          <section class="article-body-wrap">
+            <div class="article-body">
+              [##_article_rep_desc_##]
+            </div>
+          </section>
+        </section>
+      </s_page_rep>
+
+      <s_notice_rep>
+        <section class="article-view">
+          <article class="article-header">
+            <p class="card-kicker">공지</p>
+            <h1 class="article-title"><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a></h1>
+            <ul class="meta-row">
+              <li>[##_notice_rep_simple_date_##]</li>
+            </ul>
+          </article>
+          <section class="article-body-wrap">
+            <div class="article-body">
+              [##_notice_rep_desc_##]
+            </div>
+          </section>
+        </section>
+      </s_notice_rep>
+
+      <s_article_protected>
+        <section class="article-view">
+          <article class="article-header">
+            <p class="card-kicker">보호글</p>
+            <h1 class="article-title">[##_article_rep_title_##]</h1>
+          </article>
+          <section class="article-body-wrap">
+            <form class="protected-form" onsubmit="{ [##_article_dissolve_##]; return false; }">
+              <p>보호되어 있는 글입니다. 비밀번호를 입력하세요.</p>
+              <input type="password" id="[##_article_password_##]" name="[##_article_password_##]" placeholder="비밀번호">
+              <button type="submit">확인</button>
+            </form>
+          </section>
+        </section>
+      </s_article_protected>
+
+      <s_guest>
+        <section class="guestbook-view">
+          <article class="article-header">
+            <p class="card-kicker">방명록</p>
+            <h1 class="article-title">메시지 남기기</h1>
+          </article>
+          <section class="article-body-wrap">
+            [##_guestbook_group_##]
+          </section>
+        </section>
+      </s_guest>
+
+      <s_paging>
+        <div class="pager-wrap">
+          <div class="pager">
+            <a [##_prev_page_##] class="[##_no_more_prev_##]">이전</a>
+            <s_paging_rep>
+              <a [##_paging_rep_link_##] class="num">[##_paging_rep_link_num_##]</a>
+            </s_paging_rep>
+            <a [##_next_page_##] class="[##_no_more_next_##]">다음</a>
+          </div>
+        </div>
+      </s_paging>
+    </main>
+  </div>
+
+  <button class="affiliate-open" type="button" aria-controls="affiliateModal" aria-expanded="false">광고</button>
+
+  <div id="affiliateModal" class="affiliate-modal" hidden>
+    <div class="affiliate-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="affiliateModalTitle">
+      <div class="affiliate-modal-head">
+        <strong id="affiliateModalTitle">추천 상품</strong>
+      </div>
+      <div class="affiliate-modal-body">
+        <div class="affiliate-click-area">
+          <iframe
+            src="https://ads-partners.coupang.com/widgets.html?id=743722&template=carousel&trackingCode=AF2543592&subId=&width=300&height=263&tsource="
+            width="300"
+            height="263"
+            frameborder="0"
+            scrolling="no"
+            referrerpolicy="unsafe-url"
+            browsingtopics
+            loading="lazy"></iframe>
+          <a class="affiliate-note" href="https://link.coupang.com/a/edvkwV" target="_blank" rel="noopener noreferrer sponsored">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</a>
+        </div>
+        <div class="affiliate-actions">
+          <button class="affiliate-close" type="button">닫기</button>
+          <button class="affiliate-hide-today" type="button">오늘 하루 보지 않기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</s_t3>
+<script>
+  (function () {
+    var modal = document.getElementById('affiliateModal');
+    var openBtn = document.querySelector('.affiliate-open');
+    var closeButtons = document.querySelectorAll('.affiliate-close');
+    var hideTodayBtn = document.querySelector('.affiliate-hide-today');
+    var sidebarFolds = document.querySelectorAll('.sidebar-fold');
+    var sidebar = document.querySelector('.app-sidebar');
+    var appMain = document.querySelector('.app-main');
+    var recentRecords = document.querySelector('.sidebar-recent-records');
+    var tagsSection = document.querySelector('.sidebar-tags');
+    if (!modal || !openBtn || !closeButtons.length || !hideTodayBtn) return;
+    var storageKey = 'investment-log-affiliate-hidden-date';
+    var recentPlaceholder = null;
+
+    function getTodayKey() {
+      var now = new Date();
+      var y = now.getFullYear();
+      var m = String(now.getMonth() + 1).padStart(2, '0');
+      var d = String(now.getDate()).padStart(2, '0');
+      return y + '-' + m + '-' + d;
+    }
+
+    function openModal() {
+      modal.hidden = false;
+      openBtn.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      openBtn.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('modal-open');
+    }
+
+    function syncSidebarFolds() {
+      if (!sidebarFolds.length) return;
+      var isMobile = window.innerWidth <= 720;
+      sidebarFolds.forEach(function (fold) {
+        if (isMobile) {
+          fold.removeAttribute('open');
+        } else {
+          fold.setAttribute('open', 'open');
+        }
+      });
+
+      if (recentRecords && sidebar && appMain) {
+        if (!recentPlaceholder) {
+          recentPlaceholder = document.createComment('recent-records-placeholder');
+        }
+
+        if (isMobile) {
+          if (recentRecords.parentNode === sidebar) {
+            sidebar.replaceChild(recentPlaceholder, recentRecords);
+            appMain.appendChild(recentRecords);
+          }
+        } else if (recentPlaceholder.parentNode === sidebar) {
+          sidebar.replaceChild(recentRecords, recentPlaceholder);
+          if (tagsSection && recentRecords.previousElementSibling !== tagsSection) {
+            sidebar.appendChild(recentRecords);
+          }
+        }
+      }
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeButtons.forEach(function (button) {
+      button.addEventListener('click', closeModal);
+    });
+    hideTodayBtn.addEventListener('click', function () {
+      try {
+        localStorage.setItem(storageKey, getTodayKey());
+      } catch (error) {}
+      closeModal();
+    });
+    modal.addEventListener('click', function (event) {
+      if (event.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && !modal.hidden) closeModal();
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+      syncSidebarFolds();
+      var hiddenToday = false;
+      try {
+        hiddenToday = localStorage.getItem(storageKey) === getTodayKey();
+      } catch (error) {}
+      if (!hiddenToday) {
+        window.setTimeout(openModal, 300);
+      }
+
+      document.querySelectorAll('.post-row').forEach(function (card) {
+        var link = card.querySelector('.post-link');
+        if (!link) return;
+        card.addEventListener('click', function (event) {
+          if (event.target.closest('a, button, input, textarea, select, summary')) return;
+          window.location.href = link.href;
+        });
+      });
+    });
+    window.addEventListener('resize', syncSidebarFolds);
+  }());
+</script>
+</body>
+</html>
